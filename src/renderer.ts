@@ -26,6 +26,14 @@
  * ```
  */
 
-import './index.css';
+import "./index.css";
 
-console.log('👋 This message is being logged by "renderer.ts", included via Vite');
+console.log(
+  '👋 This message is being logged by "renderer.ts", included via Vite'
+);
+
+const setButton = document.getElementById("btn");
+setButton.addEventListener("click", () => {
+  // @ts-expect-error -- demo
+  window.electronAPI.startHeavyOperation();
+});
